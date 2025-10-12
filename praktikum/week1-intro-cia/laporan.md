@@ -62,15 +62,15 @@ def encrypt(text, key):
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
+(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshot/`).  
 - Berikan tabel atau ringkasan hasil uji jika diperlukan.  
 - Jelaskan apakah hasil sesuai ekspektasi.  
 - Bahas error (jika ada) dan solusinya. 
 
 Hasil eksekusi program Caesar Cipher:
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
+![Hasil Eksekusi](Screenshot 2025-10-06 155342.png)
+![Hasil Input](Screenshot 2025-10-06 161841.png)
 ![Hasil Output](screenshots/output.png)
 )
 
