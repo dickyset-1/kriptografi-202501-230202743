@@ -89,10 +89,7 @@ Prinsip dasar keamanan informasi berpusat pada tiga pilar utama, yang dikenal se
 ---
 
 ## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
+
 
 ---
 
