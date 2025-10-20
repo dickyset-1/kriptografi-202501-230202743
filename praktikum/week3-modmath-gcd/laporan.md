@@ -1,20 +1,23 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 3
+Topik: Modular Math (Aritmetika Modular, GCD, Bilangan Prima, Logaritma Diskrit)
+Nama: Dicky Setiawan
+NIM: 230202743
+Kelas: 5 IKRB
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+1. Menyelesaikan operasi aritmetika modular.
+2. Menentukan bilangan prima dan menghitung GCD (Greatest Common Divisor).
+3. Menerapkan logaritma diskrit sederhana dalam simulasi kriptografi.
 
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Cipher klasik adalah algoritma enkripsi yang digunakan sebelum era komputer modern, beroperasi dengan dua teknik dasar: substitusi (mengganti satu unit teks terang dengan unit lain, misalnya Caesar Cipher) atau transposisi (mengubah urutan unit teks terang). Tujuannya adalah mengubah teks terang (pesan asli) menjadi teks tersandi (bentuk terenkripsi) menggunakan suatu kunci rahasia. Keamanan cipher ini sepenuhnya bergantung pada kerahasiaan kuncinya, bukan pada kerumitan algoritmanya.
+
+Aritmetika modular adalah sistem matematika yang melibatkan bilangan bulat, di mana bilangan 'melingkar' (wrap around) setelah mencapai nilai tertentu yang disebut modulus ($n$). Inti konsepnya adalah kekongruenan modulo $n$ (ditulis $a \equiv b \pmod{n}$), yang berarti $a$ dan $b$ memiliki sisa yang sama ketika dibagi dengan $n$. Dalam kriptografi klasik, konsep ini sangat fundamental. Misalnya, untuk mengimplementasikan pergeseran pada alfabet 26 huruf (A=0 hingga Z=25), operasi aritmetika selalu dilakukan modulo 26. Ini memastikan hasil operasi, seperti penambahan kunci (pergeseran), selalu berada dalam rentang indeks alfabet (0 sampai 25).
 
 ---
 
