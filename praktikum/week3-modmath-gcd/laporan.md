@@ -1,9 +1,9 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: 3
-Topik: Modular Math (Aritmetika Modular, GCD, Bilangan Prima, Logaritma Diskrit)
-Nama: Dicky Setiawan
-NIM: 230202743
-Kelas: 5 IKRB
+Minggu ke-: 3   
+Topik: Modular Math (Aritmetika Modular, GCD, Bilangan Prima, Logaritma Diskrit)    
+Nama: Dicky Setiawan    
+NIM: 230202743  
+Kelas: 5 IKRB   
 
 ---
 

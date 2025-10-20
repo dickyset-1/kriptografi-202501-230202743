@@ -1,9 +1,9 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: 2
+Minggu ke-: 2   
 Topik: Cryptosystem  
-Nama: Dicky Setiawan
-NIM: 230202743
-Kelas: 5 IKRB 
+Nama: Dicky Setiawan    
+NIM: 230202743  
+Kelas: 5 IKRB   
 
 ---
 
