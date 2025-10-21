@@ -69,10 +69,10 @@ def encrypt(text, key):
 
 Hasil eksekusi program Caesar Cipher:
 
-![Hasil Eksekusi](screenshot/Screenshot 2025-10-06 155342.png)
-![Hasil Input](screenshot/Screenshot 2025-10-06 161841.png)
-![Hasil Output](screenshot/Screenshot 2025-10-12 183351.png)
-
+![Hasil Eksekusi](screenshot/eksekusi.png)
+![Hasil Input](screenshot/input.png)
+![Hasil Output](screenshot/output.png)
+)
 
 ---
 
@@ -86,7 +86,7 @@ Prinsip dasar keamanan informasi berpusat pada tiga pilar utama, yang dikenal se
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Praktikum ini berhasil mengidentifikasi dan merangkum evolusi sejarah kriptografi dari era klasik (seperti Caesar Cipher) hingga modern (seperti AES dan RSA), menyoroti pergeseran dari kerahasiaan algoritma ke kerahasiaan kunci. Selain itu, ketiga pilar fundamental keamanan informasi—Confidentiality, Integrity, dan Availability (CIA)—telah dijelaskan dan dipahami perannya dalam sistem keamanan. Kesimpulannya, kriptografi berfungsi sebagai alat utama yang secara langsung mendukung prinsip CIA, menjadikannya komponen krusial dalam mengamankan informasi di era digital kontemporer.
 
 ---
 
