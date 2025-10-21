@@ -39,15 +39,7 @@ Contoh format:
 ---
 
 ## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
 
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
 
 ---
 
@@ -59,30 +51,28 @@ def encrypt(text, key):
 
 Hasil eksekusi program Caesar Cipher:
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
+![Hasil Eksekusi](screenshot/eksekusi.png)
+![Hasil Input](screenshot/input.png)
+![Hasil Output](screenshot/output.png)
 )
 
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
+1. Peran Aritmetika Modular dalam Kriptografi ModernAritmetika modular, khususnya operasi modulo $n$, memainkan peran sentral dalam kriptografi modern karena propertinya yang menghasilkan output dalam rentang terbatas, menjadikannya ideal untuk mengelola kunci dan data yang berukuran besar.Enkripsi dan Dekripsi: Operasi modular memastikan bahwa hasil perhitungan, seperti penambahan, perkalian, atau pemangkatan, selalu berada dalam batas tertentu (misalnya, $\bmod 26$ untuk alfabet, atau $\bmod p$ untuk kelompok yang lebih besar). Hal ini penting untuk membatasi ruang state dan memungkinkan pemetaan bolak-balik (invers).Keamanan: Banyak algoritma modern (seperti RSA dan Diffie-Hellman) keamanannya didasarkan pada kesulitan menyelesaikan masalah matematika yang melibatkan operasi modular, seperti faktorisasi bilangan bulat besar atau masalah logaritma diskrit.Pembuatan Tanda Tangan Digital: Aritmetika modular digunakan dalam fungsi hash dan dalam proses penandatanganan dan verifikasi tanda tangan digital untuk memastikan integritas dan keaslian pesan.
+
+2. Pentingnya Invers Modular dalam Algoritma Kunci PublikInvers modular sangat penting dalam banyak algoritma kunci publik, terutama RSA, karena memungkinkan adanya dekripsi dari suatu pesan.Invers modular dari bilangan a modulo n adalah bilangan x sedemikian rupa sehingga:$$a \cdot x \equiv 1 \pmod{n}$$Di RSA:Kunci publik adalah $(e, n)$, di mana $e$ adalah eksponen enkripsi.Kunci privat adalah $(d, n)$, di mana $d$ adalah eksponen dekripsi.Eksponen dekripsi (d) harus menjadi invers modular dari eksponen enkripsi (e) modulo ϕ(n) (fungsi Euler totient dari n). Dengan kata lain:$$e \cdot d \equiv 1 \pmod{\phi(n)}$$Tanpa $d$ sebagai invers modular dari $e$, tidak mungkin membalikkan proses pemangkatan modular yang digunakan selama enkripsi. Extended Euclidean Algorithm adalah metode utama yang digunakan untuk menghitung invers modular ini secara efisien.
+
+3. Tantangan Utama dalam Menyelesaikan Logaritma Diskrit untuk Modulus BesarMasalah Logaritma Diskrit (DLP) adalah masalah matematika di mana diberikan bilangan g, a, dan modulus p, sulit untuk menemukan eksponen x sedemikian rupa sehingga:$$g^x \equiv a \pmod{p}$$Tantangan utama dalam menyelesaikan DLP untuk modulus besar (yang digunakan dalam kriptografi seperti Diffie-Hellman dan ElGamal) adalah:Kompleksitas Komputasi Eksponensial: Tidak ada algoritma sub-eksponensial umum yang diketahui yang dapat menyelesaikan DLP dengan cepat. Mencoba setiap nilai $x$ (pencarian brute-force) membutuhkan waktu yang sebanding dengan modulus ($p$), menjadikannya tidak layak secara komputasi ketika $p$ adalah bilangan prima yang sangat besar (misalnya, lebih dari 2048 bit).Algoritma Serangan Terbaik Masih Lambat: Algoritma yang paling efektif yang diketahui, seperti Number Field Sieve (NFS) (khususnya General Number Field Sieve/GNFS untuk DLP), meskipun lebih cepat daripada brute-force, tetap membutuhkan waktu sub-eksponensial yang besar. Ukuran modulus yang digunakan dalam kriptografi modern sengaja dipilih agar waktu yang dibutuhkan oleh GNFS melebihi batas praktis.Efek Satu Arah (Trapdoor Function): Mudah untuk menghitung $g^x \pmod{p}$ (operasi maju), tetapi sangat sulit untuk membalikkan operasi tersebut (operasi mundur). Asimetri komputasi ini adalah landasan keamanan skema kriptografi berbasis DLP.
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Praktikum ini berhasil mengimplementasikan dan memverifikasi operasi dasar aritmetika modular (penjumlahan, perkalian, eksponensiasi), Algoritma Euclidean untuk GCD, dan perhitungan invers modular. Dengan kode yang berfungsi, percobaan ini membuktikan bahwa aritmetika modular adalah dasar matematika yang memungkinkan perhitungan Logaritma Diskrit dan sangat penting sebagai fondasi komputasi untuk mekanisme enkripsi dan dekripsi dalam kriptografi modern.
 
 ---
 
 ## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
+
 
 ---
 
@@ -91,8 +81,8 @@ Contoh:
 Contoh:
 ```
 commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+Author: Dicky Setiawan <dicky.settt@gmail.com>
+Date:   2025-10-21
 
     week2-cryptosystem: implementasi Caesar Cipher dan laporan )
 ```

@@ -83,6 +83,7 @@ Prinsip dasar keamanan informasi berpusat pada tiga pilar utama, yang dikenal se
 2. Integritas (Integrity), menjamin bahwa data tetap akurat, utuh, dan tidak dimodifikasi secara tidak sah sepanjang siklus hidupnya; hal ini dicapai melalui penggunaan fungsi hashing atau tanda tangan digital, di mana setiap perubahan kecil pada data akan segera terdeteksi.
 
 3. Ketersediaan (Availability), memastikan bahwa sistem, layanan, dan data dapat diakses oleh pengguna yang sah kapan pun dibutuhkan, sebuah prinsip yang sering dipertahankan melalui mekanisme redundansi server dan backup rutin untuk memitigasi risiko kegagalan sistem.
+
 ---
 
 ## 8. Kesimpulan

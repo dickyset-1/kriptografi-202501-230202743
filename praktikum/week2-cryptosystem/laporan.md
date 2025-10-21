@@ -41,15 +41,38 @@ Contoh format:
 ---
 
 ## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
+# file: praktikum/week2-cryptosystem/src/simple_crypto.py
 
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
+def encrypt(plaintext, key):
+    result = ""
+    for char in plaintext:
+        if char.isalpha():
+            shift = 65 if char.isupper() else 97
+            result += chr((ord(char) - shift + key) % 26 + shift)
+        else:
+            result += char
+    return result
+
+def decrypt(ciphertext, key):
+    result = ""
+    for char in ciphertext:
+        if char.isalpha():
+            shift = 65 if char.isupper() else 97
+            result += chr((ord(char) - shift - key) % 26 + shift)
+        else:
+            result += char
+    return result
+
+if __name__ == "__main__":
+    message = "<230202743><DICKY SETIAWAN>"
+    key = 5
+
+    enc = encrypt(message, key)
+    dec = decrypt(enc, key)
+
+    print("Plaintext :", message)
+    print("Ciphertext:", enc)
+    print("Decrypted :", dec)
 
 ---
 
@@ -61,11 +84,10 @@ def encrypt(text, key):
 
 Hasil eksekusi program Caesar Cipher:
 
-![Hasil Eksekusi](screenshot/output.png)
-![Hasil Input](screenshot/input.png)
-![Hasil Output](screenshot/output.png)
-![Diagram Kriptosistem](screenshot/diagram_kriptosistem.png)
-)
+![Hasil Eksekusi](screenshot/eksekusi.png)    
+![Hasil Input](screenshot/input.png)    
+![Hasil Output](screenshot/output.png)      
+![Diagram Kriptosistem](screenshot/diagram_kriptosistem.png)    
 
 ---
 
@@ -79,7 +101,7 @@ Hasil eksekusi program Caesar Cipher:
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Praktikum ini berhasil mengidentifikasi dan memvisualisasikan komponen dasar kriptosistem melalui skema Plaintext $\rightarrow$ [Algoritma + Kunci] $\rightarrow$ Ciphertext. Implementasi Caesar Cipher dalam program Python sukses menyimulasikan proses enkripsi dan dekripsi simetris secara fungsional, menunjukkan bahwa kunci yang sama efektif membalikkan pesan yang dienkripsi. Kesimpulannya, pemahaman struktural komponen, proses enkripsi-dekripsi, dan klasifikasi sistem simetris vs. asimetris telah tercapai, menegaskan prinsip dasar keamanan data.
 
 ---
 
