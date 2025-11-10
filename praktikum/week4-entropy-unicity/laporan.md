@@ -126,8 +126,8 @@ Praktikum ini berhasil menunjukkan bahwa Entropi adalah penentu utama kekuatan k
 Contoh:
 ```
 commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+Author: Dicky Setiawan <dicky.settt@gmail.com>
+Date:   2025-11-04
 
     week2-cryptosystem: implementasi Caesar Cipher dan laporan )
 ```

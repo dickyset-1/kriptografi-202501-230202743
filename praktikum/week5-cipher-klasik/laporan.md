@@ -191,7 +191,7 @@ Contoh:
 Contoh:
 ```
 commit abc12345
-Author: Dicky Setiawan <email>
+Author: Dicky Setiawan <dicky.settt@gmail.com>
 Date:   2025-11-10
 
     week5-chiper-klasik: Cipher Klasik (Caesar, Vigenère, Transposisi 
