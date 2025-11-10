@@ -129,5 +129,5 @@ commit abc12345
 Author: Dicky Setiawan <dicky.settt@gmail.com>
 Date:   2025-11-04
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week4-entropy-unity: implementasi Caesar Cipher dan laporan )
 ```
