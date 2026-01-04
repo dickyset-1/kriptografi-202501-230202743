@@ -1,5 +1,5 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
+Minggu ke-: 11  
 Topik: Secret Sharing (Shamir’s Secret Sharing)  
 Nama: Dicky Setiawan  
 NIM: 230202743  
