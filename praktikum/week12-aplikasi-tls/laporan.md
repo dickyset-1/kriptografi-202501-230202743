@@ -123,6 +123,7 @@ if __name__ == "__main__":
     print(" ANALISIS SELESAI")
     print(" Gunakan output di atas untuk mengisi laporan.md")
     print(f"{'='*60}")
+```
 )
 
 
