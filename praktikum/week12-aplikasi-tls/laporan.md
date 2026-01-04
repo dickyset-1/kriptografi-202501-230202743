@@ -125,7 +125,7 @@ if __name__ == "__main__":
     print(f"{'='*60}")
 )
 
----
+
 
 ## 6. Hasil dan Pembahasan
 (- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshot/`).  
