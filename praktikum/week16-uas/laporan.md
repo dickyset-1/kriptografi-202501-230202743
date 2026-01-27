@@ -148,7 +148,7 @@ Aplikasi ini memungkinkan pengguna menambang koin SheepCoin, mengirim koin ke wa
 ---
 
 ### d. Tautan
-1. Repositori GitHub https://github.com/dickyset-1/kriptografi-202501-230202743
+1. Repositori GitHub https://dickyset-1.github.io/sheepcoin/
 2. Berkas README (week-16-uas/laporan.md; week-16-uas/sheepcoin/app.py; week-16-uas/sheepcoin/sheepcoin.db; week-16-uas/sheepcoin/requirements.txt; week-16-uas/lampiran)
 3. ![Riwayat Commit](lampiran/riwayat-commit.png)
 
