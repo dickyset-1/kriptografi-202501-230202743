@@ -119,7 +119,8 @@ Lampiran terdapat pada folder `lampiran/`.
 ---
 
 ### b. Bukti Pelaksanaan Presentasi
-![Bukti Pelaksanaan Presentasi](lampiran/bukti-presentasi.jpeg) (lampiran/bukti-presentasiii.jpg)
+![Bukti Pelaksanaan Presentasi](lampiran/bukti-presentasi.jpeg) 
+![Bukti Pelaksanaan Presentasi](lampiran/bukti-presentasiii.jpeg)
 
 ---
 
