@@ -119,7 +119,7 @@ Lampiran terdapat pada folder `lampiran/`.
 ---
 
 ### b. Bukti Pelaksanaan Presentasi
-![Bukti Pelaksanaan Presentasi](lampiran/bukti-presentasi.jpeg)
+![Bukti Pelaksanaan Presentasi](lampiran/bukti-presentasi.jpeg) (lampiran/bukti-presentasiii.jpg)
 
 ---
 
@@ -146,8 +146,10 @@ Aplikasi ini memungkinkan pengguna menambang koin SheepCoin, mengirim koin ke wa
 
 ---
 
-### d. Riwayat Commit
-![Riwayat Commit](lampiran/riwayat-commit.png)
+### d. Tautan
+1. Repositori GitHub https://github.com/dickyset-1/kriptografi-202501-230202743
+2. Berkas README (week-16-uas/laporan.md; week-16-uas/sheepcoin/app.py; week-16-uas/sheepcoin/sheepcoin.db; week-16-uas/sheepcoin/requirements.txt; week-16-uas/lampiran)
+3. ![Riwayat Commit](lampiran/riwayat-commit.png)
 
 ---
 
