@@ -103,19 +103,19 @@ Sebagai media pembelajaran, SheepCoin efektif dalam memperlihatkan hubungan anta
 ## 9. Lampiran
         a. Slide File Presentasi
             Lampiran di folder `lampiran/`
-            ![Slide 1](lampiran/slide-1.jpg)
-            ![Slide 2](lampiran/slide-2.jpg)
-            ![Slide 3](lampiran/slide-3.jpg)
-            ![Slide 4](lampiran/slide-4.jpg)
-            ![Slide 5](lampiran/slide-5.jpg)
-            ![Slide 6](lampiran/slide-6.jpg)
-            ![Slide 7](lampiran/slide-7.jpg)
-            ![Slide 8](lampiran/slide-8.jpg)
-            ![Slide 9](lampiran/slide-9.jpg)
-            ![Slide 10](lampiran/slide-10.jpg)
+            ![Slide 1](..lampiran/slide-1.jpg)
+            ![Slide 2](..lampiran/slide-2.jpg)
+            ![Slide 3](..lampiran/slide-3.jpg)
+            ![Slide 4](..lampiran/slide-4.jpg)
+            ![Slide 5](..lampiran/slide-5.jpg)
+            ![Slide 6](..lampiran/slide-6.jpg)
+            ![Slide 7](..lampiran/slide-7.jpg)
+            ![Slide 8](..lampiran/slide-8.jpg)
+            ![Slide 9](..lampiran/slide-9.jpg)
+            ![Slide 10](..lampiran/slide-10.jpg)
 
         b. Bukti Pelaksanaan Presentasi
-            ![Bukti Pelaksanaan Presentasi](lampiran/bukti-presentasi.jpeg)
+            ![Bukti Pelaksanaan Presentasi](..lampiran/bukti-presentasi.jpeg)
 
         c. Manual Book
             MANUAL BOOK APLIKASI SHEEPCOIN BLOCKCHAIN
@@ -156,12 +156,12 @@ Sebagai media pembelajaran, SheepCoin efektif dalam memperlihatkan hubungan anta
         d. Tautan Repositori GitHub
             - Tautan Repositori GitHub https://github.com/dickyset-1/kriptografi-202501-230202743
             - Berkas README (laporan.md; sheepcoin/app.py; sheepcoin/requirements; sheepcoin/sheepcoin.db; lampiran)
-            - Riwayat Commit (lampiran/riwayat-commit.png)
+            - Riwayat Commit (..lampiran/riwayat-commit.png)
 
         e. Bukti Implementasi
-            - Eksekusi Program (lampiran/eksekusi.png)
-            - Kode Inti Penerapan Kriptografi (lampiran/kode-inti.png)
-            - Output Program (lampiran/output.png)
+            - Eksekusi Program (..lampiran/eksekusi.png)
+            - Kode Inti Penerapan Kriptografi (..lampiran/kode-inti.png)
+            - Output Program (..lampiran/output.png)
 
         f. Sumbangsih Kontribusi Project
             - Membantu mencari referensi dan membuat ppt presentasi
