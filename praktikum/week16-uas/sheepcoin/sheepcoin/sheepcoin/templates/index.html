@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SheepCoin Wallet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <style>
+        :root {
+            --primary: #8A2BE2;
+            --secondary: #00d4ff;
+            --danger: #ff4757;
+            --success: #2ed573;
+            --bg: #0f172a;
+            --glass: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--bg);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            background-image: radial-gradient(circle at 10% 20%, rgba(90, 92, 106, 0.2) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 80%, rgba(138, 43, 226, 0.2) 0%, transparent 20%);
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; }
+        h1, h2 { margin-bottom: 10px; }
+        .gradient-text {
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+
+        .wallet-id {
+            font-family: monospace;
+            word-break: break-all;
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-radius: 8px;
+            color: var(--secondary);
+            font-size: 0.85em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .balance { font-size: 3rem; font-weight: 700; }
+        .stats-box {
+            background: rgba(46, 213, 115, 0.1);
+            border: 1px solid var(--success);
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--success);
+            display: flex;
+            justify-content: space-between;
+        }
+        input {
+            width: 100%; padding: 12px; margin: 8px 0;
+            background: rgba(0,0,0,0.2); border: 1px solid var(--border);
+            border-radius: 8px; color: white; box-sizing: border-box;
+        }
+        button {
+            width: 100%; padding: 12px; border: none;
+            border-radius: 8px; cursor: pointer; font-weight: bold;
+            transition: 0.3s; margin-bottom: 10px;
+        }
+        .btn-mine { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; }
+        .btn-send { background: var(--secondary); color: #000; }
+        
+        /* Auto Mine Button */
+        .btn-auto { background: transparent; border: 2px solid var(--success); color: var(--success); }
+        .btn-auto.active { background: var(--danger); border-color: var(--danger); color: white; }
+        button:hover { opacity: 0.9; transform: translateY(-2px); }
+        button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        /* Chain Visualization */
+        .block {
+            border-left: 4px solid var(--secondary);
+            background: rgba(255,255,255,0.02);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        .block.new-block { border-left-color: var(--success); }
+        .hash { font-size: 0.75rem; color: #888; word-break: break-all; }
+        .tx-list { font-size: 0.85rem; color: #ccc; margin-top: 5px; }
+        #miningLog { font-size: 0.8rem; color: var(--success); height: 20px; margin-bottom: 10px; }
+        .user-greet { font-size: 1.2rem; margin-bottom: 5px; }
+        
+        .badge-eth {
+            background: #f6851b; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header style="text-align: center; margin-bottom: 40px; position: relative;">
+        <a href="/logout" style="position:absolute; right:0; top:0; color: var(--danger); text-decoration:none; font-weight:600; font-size:0.9rem;">Disconnect Wallet</a>
+        <h1>🐑 <span class="gradient-text">SheepCoin</span> </h1>
+        <p>Local Mining with MetaMask Identity</p>
+    </header>
+
+    <div class="grid">
+        <div class="card">
+            <div class="user-greet">Halo, <span class="gradient-text" id="usernameDisplay">Miner</span> 👋</div>
+            <h2>Dompet Anda</h2>
+            <div class="balance" id="balanceDisplay">0.0000 <span style="font-size: 1rem; color:#888;">SHP</span></div>
+            
+            <div class="stats-box">
+                <span>⛏️ Hasil Mining Hari Ini:</span>
+                <strong id="dailyMineDisplay">0.0000 SHP</strong>
+            </div>
+
+            <p style="margin-top:20px; font-size:0.9rem; color:#aaa;">Connected MetaMask Address:</p>
+            <div class="wallet-id">
+                <span id="walletId">Loading...</span>
+                <span class="badge-eth">ETH/Web3</span>
+            </div>
+            
+            <hr style="border-color: var(--border); margin: 20px 0;">
+            
+            <h3>Mining Area (Local PoW)</h3>
+            <div id="miningLog"></div>
+            
+            <button class="btn-mine" id="btnManual" onclick="mineBlock(false)">⛏️ Tambang Manual (Hard)</button>
+            <button class="btn-auto" id="btnAuto" onclick="toggleAutoMine()">🤖 Auto Mining: OFF</button>
+        </div>
+
+        <div class="card">
+            <h2>Kirim Koin</h2>
+            <form id="txForm" onsubmit="sendTransaction(event)">
+                <label>Alamat Penerima (MetaMask Address)</label>
+                <input type="text" id="recipient" placeholder="0x..." required>
+                
+                <label>Jumlah (SHP)</label>
+                <input type="number" id="amount" step="0.0001" placeholder="0.0000" required>
+                
+                <button type="submit" class="btn-send">🚀 Kirim (Sign with MetaMask)</button>
+            </form>
+            <div id="txStatus" style="margin-top: 10px; font-size: 0.9rem;"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2>Ledger Blockchain (10 Terakhir)</h2>
+            <button onclick="loadChain()" style="width: auto; background: transparent; border: 1px solid var(--secondary); color: var(--secondary);">🔄 Refresh</button>
+        </div>
+        <div id="chainContainer"></div>
+    </div>
+</div>
+
+<script>
+    let myNodeId = '';
+    let isAutoMining = false;
+
+    // --- INIT ---
+    async function init() {
+        // Cek koneksi MetaMask
+        if (typeof window.ethereum !== 'undefined') {
+            const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+            if(accounts.length > 0) {
+                console.log("MetaMask Connected:", accounts[0]);
+            }
+        }
+        loadWallet();
+        loadChain();
+    }
+
+    async function loadWallet() {
+        try {
+            const res = await fetch('/wallet');
+            if(res.status === 401) window.location.href = '/login'; // Redirect if session dead
+            const data = await res.json();
+            
+            myNodeId = data.node_id;
+            
+            // Format address
+            const shortAddr = myNodeId.substring(0,6) + "..." + myNodeId.substring(myNodeId.length - 4);
+            document.getElementById('walletId').innerText = myNodeId;
+            document.getElementById('usernameDisplay').innerText = shortAddr;
+
+            const bal = parseFloat(data.balance).toFixed(4);
+            const daily = parseFloat(data.mined_today).toFixed(4);
+
+            document.getElementById('balanceDisplay').innerHTML = `${bal} <span style="font-size: 1rem; color:#888;">SHP</span>`;
+            document.getElementById('dailyMineDisplay').innerText = `${daily} SHP`;
+
+        } catch(e) { console.error(e); }
+    }
+
+    // --- MINING ---
+    function toggleAutoMine() {
+        isAutoMining = !isAutoMining;
+        const btn = document.getElementById('btnAuto');
+        const btnManual = document.getElementById('btnManual');
+        
+        if (isAutoMining) {
+            btn.innerHTML = "🛑 Stop Auto Mine";
+            btn.classList.add('active');
+            btnManual.disabled = true;
+            runAutoMineLoop();
+        } else {
+            btn.innerHTML = "🤖 Auto Mining: OFF";
+            btn.classList.remove('active');
+            btnManual.disabled = false;
+        }
+    }
+
+    async function runAutoMineLoop() {
+        while (isAutoMining) {
+            await mineBlock(true);
+            await new Promise(r => setTimeout(r, 1000));
+        }
+    }
+
+    async function mineBlock(isSilent = false) {
+        const btnManual = document.getElementById('btnManual');
+        const log = document.getElementById('miningLog');
+
+        if(!isSilent) {
+            btnManual.innerText = "⛏️ Calculating Hash...";
+            btnManual.disabled = true;
+        } else {
+            log.innerText = "🔨 Mining block...";
+        }
+
+        try {
+            const res = await fetch('/mine');
+            const data = await res.json();
+            
+            if(!isSilent) {
+                alert(`${data.message}\nReward: ${data.reward} SHP`);
+            } else {
+                log.innerText = `✅ Block #${data.index} found! (+${data.reward} SHP)`;
+            }
+
+            loadWallet();
+            loadChain();
+
+        } catch (e) { console.error(e); }
+        
+        if(!isSilent) {
+            btnManual.innerText = "⛏️ Tambang Manual (Hard)";
+            btnManual.disabled = false;
+        }
+    }
+
+    // --- TRANSAKSI HYBRID ---
+    async function sendTransaction(e) {
+        e.preventDefault();
+        const recipient = document.getElementById('recipient').value;
+        const amount = document.getElementById('amount').value;
+        const statusDiv = document.getElementById('txStatus');
+
+        // Step 1: Simulasi Web3 Experience (Meminta Signature MetaMask)
+        // Walaupun transaksi ini diproses Off-chain (SQLite), kita minta user 'Sign' pesan
+        // untuk membuktikan kepemilikan.
+        if (typeof window.ethereum !== 'undefined') {
+            try {
+                statusDiv.innerText = "Meminta Tanda Tangan MetaMask...";
+                const provider = new ethers.providers.Web3Provider(window.ethereum);
+                const signer = provider.getSigner();
+                
+                // Pesan yang akan ditandatangani
+                const message = `Kirim ${amount} SHP ke ${recipient}`;
+                await signer.signMessage(message); 
+                
+                // Jika user sign, lanjut ke backend
+            } catch (err) {
+                statusDiv.innerText = "Transaksi dibatalkan oleh user.";
+                return;
+            }
+        }
+
+        statusDiv.innerText = "Mengirim ke jaringan...";
+
+        const res = await fetch('/transactions/new', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                sender: myNodeId,
+                recipient: recipient,
+                amount: Number(amount)
+            })
+        });
+
+        const data = await res.json();
+        statusDiv.innerText = data.message;
+        statusDiv.style.color = "#00d4ff";
+        
+        document.getElementById('recipient').value = '';
+        document.getElementById('amount').value = '';
+        loadWallet(); 
+    }
+
+    async function loadChain() {
+        const res = await fetch('/chain');
+        const data = await res.json();
+        const container = document.getElementById('chainContainer');
+        container.innerHTML = '';
+        
+        data.chain.forEach((block, index) => {
+            const date = new Date(block.timestamp * 1000).toLocaleString();
+            let txHtml = '';
+            if(block.transactions.length === 0) txHtml = '<i>No Tx</i>';
+            else {
+                block.transactions.forEach(tx => {
+                    const isMining = tx.sender === "0";
+                    const amt = parseFloat(tx.amount).toFixed(4);
+                    const shortRecip = tx.recipient.substring(0,6) + '...' + tx.recipient.substring(38);
+                    
+                    txHtml += `<div style="border-bottom:1px solid rgba(255,255,255,0.1); padding:4px 0; font-size:0.8rem;">
+                        ${isMining ? '🎁' : '➡️'} 
+                        ${amt} SHP &rarr; ${shortRecip}
+                    </div>`;
+                });
+            }
+
+            const html = `
+                <div class="block ${index === 0 ? 'new-block' : ''}">
+                    <div style="display:flex; justify-content:space-between;">
+                        <strong>#${block.index}</strong>
+                        <span style="font-size:0.7rem; color:#aaa;">${date}</span>
+                    </div>
+                    <div class="hash">Hash: ${block.previous_hash.substring(0, 20)}...</div>
+                    <div class="tx-list">${txHtml}</div>
+                </div>
+            `;
+            container.innerHTML += html;
+        });
+    }
+
+    init();
+</script>
+
+</body>
+</html>
