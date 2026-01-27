@@ -101,72 +101,86 @@ Sebagai media pembelajaran, SheepCoin efektif dalam memperlihatkan hubungan anta
 ---
 
 ## 9. Lampiran
-        a. Slide File Presentasi
-            Lampiran di folder `lampiran/`
-            ![Slide 1](..lampiran/slide-1.jpg)
-            ![Slide 2](..lampiran/slide-2.jpg)
-            ![Slide 3](..lampiran/slide-3.jpg)
-            ![Slide 4](..lampiran/slide-4.jpg)
-            ![Slide 5](..lampiran/slide-5.jpg)
-            ![Slide 6](..lampiran/slide-6.jpg)
-            ![Slide 7](..lampiran/slide-7.jpg)
-            ![Slide 8](..lampiran/slide-8.jpg)
-            ![Slide 9](..lampiran/slide-9.jpg)
-            ![Slide 10](..lampiran/slide-10.jpg)
 
-        b. Bukti Pelaksanaan Presentasi
-            ![Bukti Pelaksanaan Presentasi](..lampiran/bukti-presentasi.jpeg)
+### a. Slide File Presentasi
+Lampiran terdapat pada folder `lampiran/`.
 
-        c. Manual Book
-            MANUAL BOOK APLIKASI SHEEPCOIN BLOCKCHAIN
-            1. Gambaran Umum Sistem
-                SheepCoin adalah aplikasi simulasi blockchain berbasis web yang dibangun menggunakan Python dengan framework Flask dan database SQLite. Sistem ini dirancang untuk meniru konsep dasar mata uang kripto seperti wallet, proses mining, transaksi digital, dan pencatatan blok dalam sebuah rantai blockchain. Identitas pengguna menggunakan alamat wallet dari MetaMask, sehingga pendekatannya menyerupai sistem Web3.
-
-                Aplikasi ini memungkinkan pengguna menambang koin SheepCoin, mengirim koin ke wallet lain, serta melihat riwayat blok dan transaksi. Walaupun masih berupa simulasi terpusat (karena menggunakan satu server dan database), struktur logikanya sudah mengikuti konsep blockchain seperti hash blok, proof of work, dan reward mining.
-
-            2. Teknologi Sistem
-                Sistem berjalan di atas Flask sebagai server backend, SQLite sebagai penyimpanan data, dan integrasi MetaMask untuk identitas wallet pengguna. Setiap blok diamankan dengan algoritma hashing SHA-256, sedangkan proses mining menggunakan mekanisme Proof of Work dengan tingkat kesulitan tertentu.
-
-            3. Struktur Data Sistem
-                Data pengguna disimpan berdasarkan alamat wallet yang menjadi identitas unik. Setiap blok yang dibuat menyimpan nomor blok, waktu pembuatan, nilai proof (hasil perhitungan mining), serta hash blok sebelumnya untuk menjaga kesinambungan rantai. Transaksi mencatat siapa pengirim, siapa penerima, jumlah koin, serta blok tempat transaksi tersebut dicatat.
-                Saat sistem pertama dijalankan, otomatis dibuat Genesis Block sebagai blok pertama dalam rantai.
-
-            4. Mekanisme Blockchain
-                Setiap kali pengguna melakukan mining, sistem akan mencari nilai proof yang memenuhi syarat kesulitan hashing. Jika berhasil, blok baru ditambahkan ke rantai dan pengguna menerima reward koin. Besar reward dasar dipengaruhi tingkat kesulitan mining, serta terdapat peluang kecil mendapatkan bonus “jackpot block” dengan hadiah lebih besar. 
-                Hash blok dibuat dari data blok sebelumnya sehingga jika satu blok diubah, maka hash berikutnya tidak akan cocok. Inilah yang menjaga integritas data blockchain.
-
-            5. Panduan Penggunaan
-                - Untuk masuk ke sistem, pengguna membuka halaman login dan menekan tombol koneksi wallet. MetaMask akan mengirim alamat wallet ke server, lalu sistem menyimpannya 
-                  sebagai identitas sesi pengguna.
-                - Setelah login, pengguna masuk ke dashboard yang menampilkan alamat wallet, nama tampilan singkat, total saldo SheepCoin, serta jumlah koin hasil mining hari itu.
-                - Jika pengguna menekan tombol mining, sistem menjalankan proses Proof of Work. Bila berhasil, blok baru dibuat dan reward otomatis masuk ke wallet pengguna.
-                - Untuk mengirim koin, pengguna mengirim data transaksi berupa alamat pengirim, penerima, dan jumlah koin. Sistem memverifikasi bahwa alamat pengirim sesuai dengan 
-                  sesi login sebelum transaksi dicatat.
-                - Pengguna juga dapat melihat rantai blockchain untuk menampilkan blok-blok terbaru beserta transaksi di dalamnya.
-
-            6. Keamanan Sistem
-                Sistem menggunakan hash SHA-256 untuk menjaga integritas blok dan Proof of Work untuk mencegah manipulasi data. Wallet berfungsi sebagai identitas unik pengguna. Namun sistem ini masih berupa simulasi sehingga belum menggunakan tanda tangan kriptografi asli seperti pada blockchain sungguhan, serta masih terpusat pada satu server.
-
-            7. Cara Menjalankan Sistem
-                Instal Flask terlebih dahulu, kemudian jalankan file app.py. Setelah server aktif, sistem dapat diakses melalui browser pada alamat lokal. Saat pertama kali berjalan, database dan Genesis Block akan dibuat otomatis.
-
-            8. Konsep Blockchain yang Dipelajari
-                Melalui SheepCoin, pengguna dapat memahami konsep wallet address, transaksi kripto, proses mining, proof of work, hashing, blok, rantai blok, serta sistem reward dalam blockchain.
-
-        d. Tautan Repositori GitHub
-            - Tautan Repositori GitHub https://github.com/dickyset-1/kriptografi-202501-230202743
-            - Berkas README (laporan.md; sheepcoin/app.py; sheepcoin/requirements; sheepcoin/sheepcoin.db; lampiran)
-            - Riwayat Commit (..lampiran/riwayat-commit.png)
-
-        e. Bukti Implementasi
-            - Eksekusi Program (..lampiran/eksekusi.png)
-            - Kode Inti Penerapan Kriptografi (..lampiran/kode-inti.png)
-            - Output Program (..lampiran/output.png)
-
-        f. Sumbangsih Kontribusi Project
-            - Membantu mencari referensi dan membuat ppt presentasi
+![Slide 1](../lampiran/slide-1.jpg)  
+![Slide 2](../lampiran/slide-2.jpg)  
+![Slide 3](../lampiran/slide-3.jpg)  
+![Slide 4](../lampiran/slide-4.jpg)  
+![Slide 5](../lampiran/slide-5.jpg)  
+![Slide 6](../lampiran/slide-6.jpg)  
+![Slide 7](../lampiran/slide-7.jpg)  
+![Slide 8](../lampiran/slide-8.jpg)  
+![Slide 9](../lampiran/slide-9.jpg)  
+![Slide 10](../lampiran/slide-10.jpg)
 
 ---
+
+### b. Bukti Pelaksanaan Presentasi
+![Bukti Pelaksanaan Presentasi](../lampiran/bukti-presentasi.jpeg)
+
+---
+
+### c. Manual Book
+
+**MANUAL BOOK APLIKASI SHEEPCOIN BLOCKCHAIN**
+
+**1. Gambaran Umum Sistem**  
+SheepCoin adalah aplikasi simulasi blockchain berbasis web yang dibangun menggunakan Python dengan framework Flask dan database SQLite. Sistem ini dirancang untuk meniru konsep dasar mata uang kripto seperti wallet, proses mining, transaksi digital, dan pencatatan blok dalam sebuah rantai blockchain. Identitas pengguna menggunakan alamat wallet dari MetaMask sehingga pendekatannya menyerupai sistem Web3.  
+
+Aplikasi ini memungkinkan pengguna menambang koin SheepCoin, mengirim koin ke wallet lain, serta melihat riwayat blok dan transaksi. Walaupun masih berupa simulasi terpusat (karena menggunakan satu server dan database), struktur logikanya sudah mengikuti konsep blockchain seperti hash blok, proof of work, dan reward mining.
+
+**2. Teknologi Sistem**  
+Sistem berjalan di atas Flask sebagai server backend, SQLite sebagai penyimpanan data, dan integrasi MetaMask untuk identitas wallet pengguna. Setiap blok diamankan dengan algoritma hashing SHA-256, sedangkan proses mining menggunakan mekanisme Proof of Work dengan tingkat kesulitan tertentu.
+
+**3. Struktur Data Sistem**  
+Data pengguna disimpan berdasarkan alamat wallet sebagai identitas unik. Setiap blok menyimpan nomor blok, waktu pembuatan, nilai proof (hasil mining), serta hash blok sebelumnya untuk menjaga kesinambungan rantai. Transaksi mencatat pengirim, penerima, jumlah koin, serta blok tempat transaksi dicatat. Saat sistem pertama dijalankan, otomatis dibuat Genesis Block.
+
+**4. Mekanisme Blockchain**  
+Saat pengguna melakukan mining, sistem mencari nilai proof yang memenuhi syarat kesulitan hashing. Jika berhasil, blok baru ditambahkan dan pengguna menerima reward koin. Besar reward dipengaruhi tingkat kesulitan mining serta peluang kecil mendapatkan bonus “jackpot block”. Hash blok dibuat dari data blok sebelumnya sehingga perubahan pada satu blok akan merusak rantai berikutnya.
+
+**5. Panduan Penggunaan**
+- Pengguna login dengan menghubungkan wallet MetaMask.  
+- Dashboard menampilkan alamat wallet, nama singkat, saldo SheepCoin, dan jumlah koin hasil mining.  
+- Tombol mining menjalankan proses Proof of Work dan memberi reward jika berhasil.  
+- Transaksi koin dilakukan dengan memasukkan alamat penerima dan jumlah koin.  
+- Pengguna dapat melihat rantai blockchain beserta transaksi di dalamnya.
+
+**6. Keamanan Sistem**  
+Sistem menggunakan hash SHA-256 dan Proof of Work untuk menjaga integritas data. Wallet menjadi identitas unik pengguna. Namun sistem masih berupa simulasi dan belum menggunakan tanda tangan kriptografi asli serta masih terpusat.
+
+**7. Cara Menjalankan Sistem**  
+Instal Flask, jalankan file `app.py`, lalu akses melalui browser. Database dan Genesis Block dibuat otomatis saat pertama kali dijalankan.
+
+**8. Konsep Blockchain yang Dipelajari**  
+Wallet address, transaksi kripto, mining, proof of work, hashing, blok, rantai blok, dan sistem reward.
+
+---
+
+### d. Tautan Repositori GitHub
+- Repositori: https://github.com/dickyset-1/kriptografi-202501-230202743  
+- Berkas README: `laporan.md`, `sheepcoin/app.py`, `sheepcoin/requirements`, `sheepcoin/sheepcoin.db`, `lampiran/`  
+- Riwayat Commit:  
+  ![Riwayat Commit](../lampiran/riwayat-commit.png)
+
+---
+
+### e. Bukti Implementasi
+- Eksekusi Program  
+  ![Eksekusi Program](../lampiran/eksekusi.png)
+
+- Kode Inti Penerapan Kriptografi  
+  ![Kode Inti](../lampiran/kode-inti.png)
+
+- Output Program  
+  ![Output Program](../lampiran/output.png)
+
+---
+
+### f. Sumbangsih Kontribusi Project
+- Membantu mencari referensi dan membuat PPT presentasi
 
 ## 10. Commit Log
 
